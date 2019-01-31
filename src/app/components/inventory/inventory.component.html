@@ -1,3 +1,25 @@
-<app-header></app-header>
-  <div id="message">{{message}}</div>
-
+<mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.id}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.name}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="content">
+    <mat-header-cell *matHeaderCellDef>Content</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.content}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.title}}</mat-cell>
+  </ng-container>
+  
+  <ng-container matColumnDef="url">
+    <mat-header-cell *matHeaderCellDef>URL</mat-header-cell>
+    <mat-cell *matCellDef="let item">{{item.url}}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+</mat-table>

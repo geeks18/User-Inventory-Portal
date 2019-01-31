@@ -12,6 +12,7 @@ import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth.guard';
 
 import { ProfileComponent } from './components/profile/profile.component';
+import { MatTableModule } from  '@angular/material';
 
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -33,6 +34,7 @@ Amplify.configure(aws_exports)
   ],
   imports: [
     BrowserModule,
+    MatTableModule,
   HttpClientModule,
   ReactiveFormsModule,
   AmplifyAngularModule,
