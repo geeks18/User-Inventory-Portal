@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <mat-table [dataSource]="dataSource">
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
@@ -15,7 +17,7 @@
     <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
     <mat-cell *matCellDef="let item">{{item.title}}</mat-cell>
   </ng-container>
-  
+
   <ng-container matColumnDef="url">
     <mat-header-cell *matHeaderCellDef>URL</mat-header-cell>
     <mat-cell *matCellDef="let item">{{item.url}}</mat-cell>
