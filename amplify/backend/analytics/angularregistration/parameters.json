@@ -1,0 +1,11 @@
+{
+    "appName": "angularregistration",
+    "roleName": "pinpointLambdaRole7b7be55d",
+    "cloudWatchPolicyName": "cloudWatchPolicy7b7be55d",
+    "pinpointPolicyName": "pinpointPolicy7b7be55d",
+    "authPolicyName": "pinpoint_amplify_7b7be55d",
+    "unauthPolicyName": "pinpoint_amplify_7b7be55d",
+    "authRoleName": "angularregistration-20190131125344-authRole",
+    "unauthRoleName": "angularregistration-20190131125344-unauthRole",
+    "IAMPrefix": "564446340644"
+}

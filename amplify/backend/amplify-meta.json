@@ -1,0 +1,52 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "angularregistration-20190131125344-authRole",
+			"UnauthRoleArn": "arn:aws:iam::564446340644:role/angularregistration-20190131125344-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::564446340644:role/angularregistration-20190131125344-authRole",
+			"Region": "eu-west-1",
+			"DeploymentBucketName": "angularregistration-20190131125344-deployment",
+			"UnauthRoleName": "angularregistration-20190131125344-unauthRole",
+			"StackName": "angularregistration-20190131125344",
+			"StackId": "arn:aws:cloudformation:eu-west-1:564446340644:stack/angularregistration-20190131125344/ddd6cef0-254e-11e9-b9ec-024e38e0666a"
+		}
+	},
+	"auth": {
+		"cognito3362168a": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/angularregistration-20190131125344-deployment/amplify-cfn-templates/auth/cognito3362168a-cloudformation-template.yml",
+				"logicalId": "authcognito3362168a"
+			},
+			"lastPushTimeStamp": "2019-01-31T12:09:33.346Z",
+			"output": {
+				"AppClientSecret": "1hijd8vqokldc77vi4e51rd22m3eetbvqmkthg8v1ag70vvfms15",
+				"UserPoolId": "eu-west-1_koJ0GhR6A",
+				"AppClientIDWeb": "63k2aipdj2cibg9e2t9ip61ioc",
+				"AppClientID": "171svgspb2psvj8js204qu1sm7",
+				"IdentityPoolId": "eu-west-1:c03cd5d4-faf0-4dc2-abf8-eda2f45d86c4",
+				"IdentityPoolName": "cognito3362168a_identitypool_3362168a",
+				"UserPoolName": "cognito3362168a_userpool_3362168a"
+			},
+			"lastPushDirHash": "vGWGsyaY/5N7aQtVkCZgFCJvKfs="
+		}
+	},
+	"analytics": {
+		"angularregistration": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/angularregistration-20190131125344-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+				"logicalId": "analyticsangularregistration"
+			},
+			"lastPushTimeStamp": "2019-01-31T12:09:33.346Z",
+			"output": {
+				"appName": "angularregistration",
+				"Region": "eu-west-1",
+				"Id": "d069ebf25c2448e69892561aeeb3fb42"
+			},
+			"lastPushDirHash": "FEps2DTnORn5oCjbYMu1G+dOLS4="
+		}
+	}
+}

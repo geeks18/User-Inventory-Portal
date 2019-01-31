@@ -1,0 +1,49 @@
+# this is an auto generated file. This will be overwritten
+mutation AddItem(
+  $name: String!
+  $content: String
+  $id: ID!
+  $title: String
+  $url: String
+) {
+  addItem(name: $name, content: $content, id: $id, title: $title, url: $url) {
+    name
+    content
+    id
+    title
+    url
+    version
+  }
+}
+mutation DeleteItem($id: ID!) {
+  deleteItem(id: $id) {
+    name
+    content
+    id
+    title
+    url
+    version
+  }
+}
+mutation UpdateItem(
+  $name: String!
+  $content: String!
+  $id: ID!
+  $title: String!
+  $url: String!
+) {
+  updateItem(
+    name: $name
+    content: $content
+    id: $id
+    title: $title
+    url: $url
+  ) {
+    name
+    content
+    id
+    title
+    url
+    version
+  }
+}

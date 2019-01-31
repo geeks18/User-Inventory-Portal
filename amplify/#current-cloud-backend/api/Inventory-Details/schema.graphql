@@ -1,0 +1,8 @@
+type Item  @model {
+	name: String!
+	content: String
+	id: ID!
+	title: String
+	url: String
+	version: Int!
+}

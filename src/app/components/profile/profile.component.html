@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div>
+ {{message }}
+
+</div>
+
+
+<div *ngIf="auth.isLoggedIn">
+
+        <div *ngIf="isLoading"> Loading....</div>
+
+        <div *ngIf="!isLoading">
+            <p>First Name:  {{users.first_name}}</p>
+            <p>Last Name:  {{users.last_name}}</p>
+            <p>Email:  {{users.email}}</p>
+        </div>
+</div>
+

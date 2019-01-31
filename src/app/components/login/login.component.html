@@ -1,0 +1,40 @@
+<app-header></app-header>
+<div class="limiter">
+
+    <div class="container-login">
+        <div class="wrap-login">
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group form-input">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div class="error" *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group form-input">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div class="error"  *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group form-input">
+                    <button [disabled]="loading" class="btn btn-primary">Login</button>
+                   <span style="position:fixed;margin-left: 2%">
+                        <a href="register">
+                                Don’t have an account?
+                        </a>
+                        <a style="position: fixed" href="forgotPassword">
+                            Forgot Password
+                        </a>
+                   </span>
+                </div>
+                <div>
+                        
+
+                </div>
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div>

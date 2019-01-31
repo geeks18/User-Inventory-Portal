@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <a href="#" class="navbar-brand">Home</a>
+      </div>
+  
+      <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/inventory">Inventories</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+                <li><a *ngIf="!auth.isLoggedIn" href="/login">Login</a></li>
+                <li><a *ngIf="!auth.isLoggedIn" href="/register">Register</a></li>
+                <li><a *ngIf="auth.isLoggedIn" href="#" (click)="logout()">LogOut</a></li>
+         </ul>
+      </div>
+  </div>
+</nav>

@@ -1,0 +1,11 @@
+# this is an auto generated file. This will be overwritten
+subscription NewItem {
+  newItem {
+    name
+    content
+    id
+    title
+    url
+    version
+  }
+}

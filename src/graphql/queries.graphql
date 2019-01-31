@@ -1,0 +1,37 @@
+# this is an auto generated file. This will be overwritten
+query AllItems($count: Int, $nextToken: String) {
+  allItems(count: $count, nextToken: $nextToken) {
+    items {
+      name
+      content
+      id
+      title
+      url
+      version
+    }
+    nextToken
+  }
+}
+query AllItemsByTitle($title: String!, $count: Int, $nextToken: String) {
+  allItemsByTitle(title: $title, count: $count, nextToken: $nextToken) {
+    items {
+      name
+      content
+      id
+      title
+      url
+      version
+    }
+    nextToken
+  }
+}
+query GetItem($id: ID!) {
+  getItem(id: $id) {
+    name
+    content
+    id
+    title
+    url
+    version
+  }
+}
