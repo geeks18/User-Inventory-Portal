@@ -1,3 +1,18 @@
+
+
+import {
+  MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatPaginatorModule, MatSortModule,
+  MatTableModule, MatToolbarModule,
+} from '@angular/material';
+import {DataService} from './service/data.service';
+import {AddDialogComponent} from './components/inventory/dialogs/add/add.dialog.component';
+import {EditDialogComponent} from './components/inventory/dialogs/edit/edit.dialog.component';
+import {DeleteDialogComponent} from './components/inventory/dialogs/delete/delete.dialog.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule} from '@angular/forms';
+
+
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -12,8 +27,6 @@ import { AuthService } from './service/auth.service';
 import { AuthGuard } from './service/auth.guard';
 
 import { ProfileComponent } from './components/profile/profile.component';
-import { MatTableModule } from  '@angular/material';
-
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import Amplify from 'aws-amplify';
@@ -30,7 +43,11 @@ Amplify.configure(aws_exports)
     RegisterComponent,
     ForgotPwdComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    AppComponent,
+    AddDialogComponent,
+    EditDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +55,20 @@ Amplify.configure(aws_exports)
   HttpClientModule,
   ReactiveFormsModule,
   AmplifyAngularModule,
+
+  BrowserModule,
+  BrowserAnimationsModule,
+  HttpClientModule,
+  MatDialogModule,
+  FormsModule,
+  MatButtonModule,
+  MatInputModule,
+  MatIconModule,
+  MatSortModule,
+  MatTableModule,
+  MatToolbarModule,
+  MatPaginatorModule,
+  ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: 'inventory',
@@ -68,7 +99,12 @@ Amplify.configure(aws_exports)
 	  
     ])
   ],
-  providers: [AuthService,AmplifyService],
+  entryComponents: [
+    AddDialogComponent,
+    EditDialogComponent,
+    DeleteDialogComponent
+  ],
+  providers: [AuthService,AmplifyService,DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
