@@ -18,7 +18,7 @@ export class InventoryComponent implements OnInit {
       this.message='Welcome to inventory';
     //const itemQuery=this.apsync.GetItem('33ff1be5-04fc-40fb-90ed-adc327865bcd');
     const itemQuery=this.apsync.AllItems(5);
-    itemQuery.then((res:AllItemsQuery) => console.log(JSON.stringify(res)));
+    itemQuery.then((res:AllItemsQuery) =>  res.items.forEach(element=>this.message=element.name));
 
     }else{
       this.message='Sorry you are not logged In';

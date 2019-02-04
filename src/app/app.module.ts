@@ -36,6 +36,7 @@ Amplify.configure(aws_exports)
   HttpClientModule,
   ReactiveFormsModule,
   AmplifyAngularModule,
+  
     RouterModule.forRoot([
       {
         path: 'inventory',

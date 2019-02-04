@@ -23,7 +23,7 @@ export class AuthService {
   }
 
 
-  
+
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -32,8 +32,8 @@ export class AuthService {
     })
   };
   get getAccessToken() {
-    if(this.currentUserValue)
-    return this.currentUserValue.AccessToken;
+    if (this.currentUserValue)
+      return this.currentUserValue.AccessToken;
     else null;
   }
   get isLoggedIn() {
@@ -69,9 +69,6 @@ export class AuthService {
 
         return user;
       }));
-
-
-
   }
 
   logout() {
@@ -82,40 +79,76 @@ export class AuthService {
 
   getUser() {
 
-    const accessToken=this.getAccessToken;
+    const accessToken = this.getAccessToken;
 
-   
+
     return this.http.put<any>(environment.getUserDetails,
-        {
-          accessToken
-        },
-        this.httpOptions).pipe(
-          map(
+      {
+        accessToken
+      },
+      this.httpOptions).pipe(
+        map(
           (response) => {
-                    return response;
+            return response;
           }));
 
-  
+
+  }
+
+
+  saveUserDetails(user: User) {
+
+    return  this.http.put<any>(environment.signUp, user, this.httpOptions).pipe(
+      map(  (response) => {
+        console.log(response);
+          return response;
+        }));
+   
+
+  }
+  resetPassword(username: string) {
+
+    let userObject = {
+      "email": username
+    }
+
+    // post these details to API server return user info if correct
+
+    return this.http.post<any>(environment.forgotPwd, userObject, this.httpOptions).pipe(
+
+      map(resp => {
+
+        // login successful 
+        if (resp && resp.statusCode === 0) {
+          console.log(resp.msg);
+        }
+
+        return resp;
+      }));
+  }
+
+  changePassword(username: string,authcode:string,password:string) {
+    
+    let userObject = {
+      "email": username,
+      "password":password,
+      "code":authcode
+    }
+
+    // post these details to API server return user info if correct
+
+    return this.http.put<any>(environment.changePwd, userObject, this.httpOptions).pipe(
+
+      map(resp => {
+
+        // login successful 
+        if (resp && resp.statusCode === 0) {
+          console.log(resp.msg);
+        }
+
+        return resp;
+      }));
   }
 
 
-  saveUserDetails(user: User): Observable<boolean> {
-
-    return Observable.create(observer => {
-      this.http.put<User>(environment.signUp, user, this.httpOptions).subscribe(
-        (response) => {
-          //TODO check the response status as 200
-
-          observer.next(true);
-          observer.complete();
-        },
-        (error) => {
-          console.log(JSON.stringify(error));
-          observer.error(error);
-          observer.complete();
-        });
-
-    });
-
-  }
 }

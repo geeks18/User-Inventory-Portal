@@ -14,7 +14,8 @@ export class RegisterComponent implements OnInit {
   loading = false;
   returnUrl: string;
   error = '';
-
+  signUpSuccess=false;
+  signUpMsg:string;
   constructor(private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
@@ -47,11 +48,26 @@ export class RegisterComponent implements OnInit {
       "password": this.f.password.value,
     }
 
-    this.auth.saveUserDetails(userObject).subscribe((resp: boolean) => {
-      if (resp === true) {
-
-        this.router.navigate(['/']);
-        //  this.auth.setLoggedIn(true);
+    this.auth.saveUserDetails(userObject).pipe().subscribe((resp) => {
+      if (resp && resp.body) { 
+     
+        if( resp.body.statusCode==3){
+          this.signUpSuccess=false;
+          this.error="data validation failed . Password doesnot match policy"
+        }
+        if( resp.body.statusCode==2){
+          this.signUpSuccess=false;
+          this.error="User already exists. Please check your email for confirmation of your code."
+        }
+        else if( resp.body.statusCode==1){
+          this.signUpSuccess=false;
+          this.error="Error in Registration Process"
+        }
+        else if( resp.body.statusCode==0){
+          this.signUpSuccess=true;
+          this.signUpMsg="Congratulation your Registration is  successfull. Go ahead and login into he application"
+        }
+       
       } else {
         this.error="Error";
 

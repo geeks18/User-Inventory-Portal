@@ -1,3 +1,59 @@
-<p>
-  forgot-pwd works!
-</p>
+<app-header></app-header>
+<div class="limiter">
+
+    <div class="container-login">
+        <div  class="wrap-login">
+            <form  *ngIf = "!pwdSuccess" class="login-form" [formGroup]="resetForm" (ngSubmit)="onReset()">
+                <div class="form-group form-input">
+                    <label for="username">Email or Username</label>
+                    <input type="text"  formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': rSubmitted && rf.username.errors }" />
+                    <div *ngIf="rSubmitted && rf.username.errors" class="invalid-feedback">
+                        <div class="error" *ngIf="rf.username.errors.required">Email or Username is required</div>
+                    </div>
+                </div>
+                
+             
+
+                <div class="form-group form-input">
+                    <button mat-raised-button [disabled]="loading" class="btn btn-primary">Reset</button>
+                    
+                </div>
+                <div>
+                        
+
+                </div>
+                <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            </form>
+
+            <form  class="login-form" [formGroup]="changePwdForm" (ngSubmit)="onSubmit()" *ngIf = "pwdSuccess">
+                    <div class="form-group form-input">
+                            <label for="username">Email or Username</label>
+                            <input type="text"  formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': cSubmitted && cf.username.errors }" />
+                            <div *ngIf="cSubmitted && cf.username.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="cf.username.errors.required">Email or Username is required</div>
+                            </div>
+                        </div>
+                    <div   class="form-group form-input">
+                            <label for="authCode">Authentication Code</label>
+                            <input type="text" formControlName="authCode" class="form-control" [ngClass]="{ 'is-invalid': cSubmitted && cf.username.errors }" />
+                            <div *ngIf="cSubmitted && cf.authCode.errors" class="invalid-feedback">
+                                <div class="error" *ngIf="cf.authCode.errors.required">Code required</div>
+                            </div>
+                        </div>
+                          
+                        <div  class="form-group form-input">
+                          <label for="nPassword">New Password</label>
+                          <input type="password" formControlName="nPassword" class="form-control" [ngClass]="{ 'is-invalid': cSubmitted && cf.username.errors }" />
+                          <div *ngIf="cSubmitted && cf.nPassword.errors" class="invalid-feedback">
+                              <div class="error" *ngIf="cf.nPassword.errors.required">Password is required</div>
+                          </div>
+                      </div>
+
+                      <div class="form-group form-input">
+                          <button  [disabled]="loading" class="btn btn-primary">Submit</button>
+                      </div>
+            </form>
+
+        </div>
+    </div>
+</div>
