@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       .pipe().subscribe((data) => {
         if (data.statusCode == 200) {
 
-          this.router.navigate(['/']);
+          this.router.navigate(['inventory']);
 
         }
         else if (data.statusCode == 400) {
