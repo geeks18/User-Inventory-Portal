@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { BehaviorSubject, Observable } from 'rxjs';
-import { SignIn } from '../types/signin'
+import { SignIn } from '../types/signIn'
 import { Token } from '../types/token'
 import { User } from '../types/user'
 import { environment } from '../../environments/environment'

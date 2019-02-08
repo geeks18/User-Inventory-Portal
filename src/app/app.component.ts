@@ -7,5 +7,5 @@ import { MatTableModule } from  '@angular/material';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'user-profile';
+  title = 'User-Inventory';
 }
