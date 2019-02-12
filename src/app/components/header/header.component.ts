@@ -8,7 +8,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthService,private router: Router) { }
+  constructor(public auth: AuthService,private router: Router) { }
 
   ngOnInit() {
   }

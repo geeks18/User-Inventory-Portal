@@ -1,18 +1,43 @@
 <app-header></app-header>
-<div>
- {{message }}
 
-</div>
 
 
 <div *ngIf="auth.isLoggedIn">
+    <div class="limiter">
 
-        <div *ngIf="isLoading"> Loading....</div>
+        <div class="container-login">
+            <div class="profile-container">
 
-        <div *ngIf="!isLoading">
-            <p>First Name:  {{users.first_name}}</p>
-            <p>Last Name:  {{users.last_name}}</p>
-            <p>Email:  {{users.email}}</p>
+
+
+
+                <div *ngIf="isLoading"> Loading....</div>
+
+                <div *ngIf="!isLoading" class="col-md-9">
+                    <div class="profile-header">
+                        <h4>Profile Details</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5"> First Name </div>
+                        <div class="col-md-3">{{users.first_name}}</div>
+
+                    </div>
+                    <div class="row">
+                        <td class="col-md-5">Last Name</td>
+                        <td class="col-md-3"> {{users.last_name}}</td>
+
+                    </div>
+                    <div class="row">
+                        <td class="col-md-5">Email</td>
+                        <td class="col-md-3"> {{users.email}}</td>
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
-</div>
 
+    </div>
+</div>

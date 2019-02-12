@@ -28,8 +28,8 @@ export class InventoryComponent implements OnInit {
   dataSource: ExampleDataSource | null;
   index: number;
   id: string;
-
-  constructor(public httpClient: HttpClient,
+ 
+  constructor(public auth: AuthService,public httpClient: HttpClient,
               public dialog: MatDialog,
               public dataService: DataService,public apsync:APIService) {}
 

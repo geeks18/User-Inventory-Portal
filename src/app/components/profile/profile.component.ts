@@ -9,7 +9,7 @@ export class ProfileComponent implements OnInit {
  
   public isLoading:boolean = false;
   
-  constructor(private auth: AuthService) { }
+  constructor(public auth: AuthService) { }
   users= new User;
   message="Profile Details";
   ngOnInit() {

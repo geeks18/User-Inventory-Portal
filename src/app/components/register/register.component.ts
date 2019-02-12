@@ -53,14 +53,17 @@ export class RegisterComponent implements OnInit {
      
         if( resp.body.statusCode==3){
           this.signUpSuccess=false;
+          this.loading=false;
           this.error="data validation failed . Password doesnot match policy"
         }
         if( resp.body.statusCode==2){
           this.signUpSuccess=false;
+          this.loading=false;
           this.error="User already exists. Please check your email for confirmation of your code."
         }
         else if( resp.body.statusCode==1){
           this.signUpSuccess=false;
+          this.loading=false;
           this.error="Error in Registration Process"
         }
         else if( resp.body.statusCode==0){

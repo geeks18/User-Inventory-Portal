@@ -2,7 +2,7 @@
   "name": "user-profile",
   "version": "0.0.0",
   "scripts": {
- 	"start":"ng serve"
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
