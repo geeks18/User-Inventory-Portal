@@ -29,7 +29,7 @@ export class InventoryComponent implements OnInit {
   index: number;
   id: string;
  
-  constructor(public auth: AuthService,public httpClient: HttpClient,
+  constructor(public httpClient: HttpClient,
               public dialog: MatDialog,
               public dataService: DataService,public apsync:APIService) {}
 
